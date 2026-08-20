@@ -1,295 +1,3 @@
-.anime-info-slider,
-.anime-info-slider * {
-  box-sizing: border-box;
-}
-
-.anime-info-slider {
-  --ais-yellow: #ffd400;
-  position: relative;
-  width: 100%;
-  min-height: 280px;
-  overflow: hidden;
-  background: #111;
-  color: #eee;
-  font-family: Arial, Helvetica, sans-serif;
-  isolation: isolate;
-}
-
-.anime-info-slider .ais-background {
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transform: scale(1.08);
-  filter: blur(3px);
-  transition: background-image .3s ease;
-}
-
-.anime-info-slider .ais-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(12,12,12,.94) 0%,
-      rgba(20,16,15,.94) 50%,
-      rgba(10,10,10,.95) 100%
-    );
-}
-
-.anime-info-slider .ais-pattern {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: .23;
-  background-image:
-    radial-gradient(
-      rgba(255,255,255,.13) 1px,
-      transparent 1px
-    );
-  background-size: 4px 4px;
-}
-
-
-/* =====================================================
-   TRACK
-   ===================================================== */
-
-.anime-info-slider .ais-track {
-  position: relative;
-  display: flex;
-  width: 100%;
-  min-height: 280px;
-
-  transform: translate3d(0,0,0);
-
-  transition:
-    transform .25s ease;
-}
-
-
-/* =====================================================
-   SLIDE
-   ===================================================== */
-
-.anime-info-slider .ais-slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  min-height: 280px;
-
-  padding: 30px 31px 52px;
-
-  display: flex;
-  align-items: center;
-  gap: 17px;
-}
-
-
-/* =====================================================
-   POSTER
-   ===================================================== */
-
-.anime-info-slider .ais-poster {
-  flex: 0 0 123px;
-  width: 123px;
-  height: 175px;
-  overflow: hidden;
-  background: #222;
-}
-
-.anime-info-slider .ais-poster a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.anime-info-slider .ais-poster img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-/* =====================================================
-   INFO
-   ===================================================== */
-
-.anime-info-slider .ais-info {
-  min-width: 0;
-  flex: 1;
-  align-self: stretch;
-
-  padding-top: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.anime-info-slider .ais-title {
-  margin: 0 0 10px;
-  padding: 0;
-
-  color: #fff;
-
-  font-size: 20px;
-  line-height: 1.25;
-  font-weight: 700;
-
-  text-transform: uppercase;
-}
-
-.anime-info-slider .ais-title a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.anime-info-slider .ais-date {
-  margin-bottom: 9px;
-
-  color: var(--ais-yellow);
-
-  font-size: 12px;
-  line-height: 1.3;
-  font-weight: 700;
-
-  text-transform: uppercase;
-}
-
-.anime-info-slider .ais-genres {
-  margin-bottom: 12px;
-
-  color: #eee;
-
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.anime-info-slider .ais-summary-title {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 6px;
-  font-weight: 700;
-  color: #ccc;
-
-  text-transform: uppercase;
-}
-
-.anime-info-slider .ais-summary {
-  max-width: 680px;
-
-  margin: 0 0 8px;
-
-  color: #eee;
-
-  font-size: 12px;
-  line-height: 1.65;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden;
-}
-
-.anime-info-slider .ais-meta {
-  display: block;
-  margin: 0;
-  padding: 0;
-  color: #eee;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.anime-info-slider .ais-meta span {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.anime-info-slider .ais-meta strong {
-  color: unset !important;
-  font-weight: 400 !important;
-}
-
-.anime-info-slider .ais-meta strong {
-  color: unset !important;
-  font-weight: 400 !important;
-}
-
-
-/* =====================================================
-   DOTS
-   ===================================================== */
-
-.anime-info-slider .ais-dots {
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: 11px;
-
-  z-index: 20;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 6px;
-}
-
-.anime-info-slider .ais-dot {
-  width: 12px;
-  height: 12px;
-
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-
-  background: #555;
-
-  box-shadow:
-    inset 0 0 2px rgba(0,0,0,.8);
-
-  cursor: pointer;
-
-  transition:
-    background .25s ease,
-    transform .25s ease;
-}
-
-.anime-info-slider .ais-dot:hover {
-  background: #777;
-}
-
-.anime-info-slider .ais-dot.is-active {
-  background: var(--ais-yellow);
-  transform: scale(1.05);
-}
-
-
-/* =====================================================
-   LOADING / MESSAGE
-   ===================================================== */
-
-.anime-info-slider .ais-loading,
-.anime-info-slider .ais-message {
-  min-height: 280px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #999;
-  font-size: 12px;
-}
-
-
 /* =====================================================
    TABLET
    ===================================================== */
@@ -297,36 +5,140 @@
 @media (max-width:700px) {
 
   .anime-info-slider {
-    min-height: 400px;
+    min-height: 330px;
   }
 
   .anime-info-slider .ais-track,
   .anime-info-slider .ais-slide {
-    min-height: 400px;
+    min-height: 330px;
   }
 
   .anime-info-slider .ais-slide {
-    padding: 24px 20px 50px;
-    gap: 15px;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 22px 25px 45px 20px;
+    gap: 14px;
+
+    text-align: left;
   }
 
   .anime-info-slider .ais-poster {
-    flex-basis: 105px;
-    width: 105px;
-    height: 150px;
+    flex: 0 0 100px;
+    width: 100px;
+    height: 143px;
+
+    margin: 0;
   }
 
   .anime-info-slider .ais-info {
-    justify-content: flex-start;
+    flex: 1 1 auto;
+    min-width: 0;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0;
+    margin: 0;
+
+    text-align: left;
   }
 
   .anime-info-slider .ais-title {
+    width: 100%;
+
+    margin: 0 0 7px;
+    padding: 0;
+
     font-size: 17px;
+    line-height: 1.25;
+
+    text-align: left;
+  }
+
+  .anime-info-slider .ais-date {
+    width: 100%;
+
+    margin-bottom: 6px;
+
+    font-size: 10px;
+    line-height: 1.3;
+
+    text-align: left;
+  }
+
+  .anime-info-slider .ais-genres {
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    text-align: left;
+  }
+
+  .anime-info-slider .ais-summary-title {
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    text-align: left;
   }
 
   .anime-info-slider .ais-summary {
-    -webkit-line-clamp: 5;
+    width: 100%;
+    max-width: none;
+
+    margin: 0 0 7px;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    text-align: left;
+
+    -webkit-line-clamp: 4;
+  }
+
+  .anime-info-slider .ais-meta {
+    width: 100%;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    text-align: left;
+  }
+
+  .anime-info-slider .ais-meta span {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+  }
+
+  .anime-info-slider .ais-prev,
+  .anime-info-slider .ais-next {
+    opacity: .7;
+  }
+
+  .anime-info-slider .ais-dot {
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -335,79 +147,195 @@
    MOBILE
    ===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
 
   .anime-info-slider {
-    min-height: 330px;
+    min-height: 300px;
   }
 
   .anime-info-slider .ais-track,
   .anime-info-slider .ais-slide {
-    min-height: 330px;
+    min-height: 300px;
   }
 
   .anime-info-slider .ais-slide {
     display: flex;
+    flex-direction: row;
     align-items: center;
+
+    width: 100%;
+
+    padding: 18px 21px 42px 17px;
+
+    gap: 11px;
+
     text-align: left;
-    padding: 22px 28px 45px 22px;
-    gap: 12px;
   }
+
+  /* ================================
+     POSTER
+     ================================ */
 
   .anime-info-slider .ais-poster {
-    flex: 0 0 82px;
-    width: 82px;
-    height: 120px;
+    flex: 0 0 78px;
+
+    width: 78px;
+    height: 112px;
+
     margin: 0;
+    padding: 0;
+
+    align-self: center;
   }
+
+  /* ================================
+     INFO
+     ================================ */
 
   .anime-info-slider .ais-info {
-    flex: 1;
+    flex: 1 1 auto;
+
+    width: auto;
     min-width: 0;
+
+    height: auto;
+
+    align-self: center;
+
     display: flex;
-    text-align: left;
+    flex-direction: column;
+
     justify-content: center;
-    align-self: stretch;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
   }
+
+  /* ================================
+     TITLE
+     ================================ */
 
   .anime-info-slider .ais-title {
-    font-size: 14px;
+    width: 100%;
+
+    margin: 0 0 5px;
+    padding: 0;
+
+    font-size: 13px;
     line-height: 1.25;
-    margin-bottom: 6px;
+    font-weight: 700;
+
+    text-align: left;
   }
+
+  /* ================================
+     DATE
+     ================================ */
 
   .anime-info-slider .ais-date {
-    font-size: 9px;
-    margin-bottom: 5px;
+    width: 100%;
+
+    margin: 0 0 5px;
+
+    font-size: 8px;
+    line-height: 1.3;
+    font-weight: 700;
+
+    text-align: left;
   }
+
+  /* ================================
+     GENRE
+     ================================ */
 
   .anime-info-slider .ais-genres {
-    font-size: 9px;
+    width: 100%;
+
+    margin: 0 0 6px;
+
+    font-size: 8px;
     line-height: 1.4;
-    margin-bottom: 7px;
+
+    text-align: left;
+
+    overflow: hidden;
   }
+
+  /* ================================
+     SUMMARY TITLE
+     ================================ */
 
   .anime-info-slider .ais-summary-title {
-    font-size: 9px;
-    margin-bottom: 4px;
+    width: 100%;
+
+    margin: 0 0 3px;
+
+    font-size: 8px;
+    line-height: 1.2;
+
+    text-align: left;
   }
+
+  /* ================================
+     SUMMARY
+     ================================ */
 
   .anime-info-slider .ais-summary {
-    font-size: 9px;
+    width: 100%;
+    max-width: none;
+
+    margin: 0 0 5px;
+
+    font-size: 8px;
     line-height: 1.45;
-    margin-bottom: 6px;
-    -webkit-line-clamp: 4;
+
+    text-align: left;
+
+    -webkit-line-clamp: 3;
   }
 
+  /* ================================
+     STATUS / TYPE
+     ================================ */
+
   .anime-info-slider .ais-meta {
-    justify-content: flex-start;
-    gap: 10px;
-    font-size: 9px;
+    width: 100%;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 8px;
+    line-height: 1.4;
+
+    text-align: left;
   }
+
+  .anime-info-slider .ais-meta span {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+  }
+
+  /* ================================
+     NAVIGATION
+     ================================ */
 
   .anime-info-slider .ais-prev,
   .anime-info-slider .ais-next {
     opacity: .7;
+
+    width: 25px;
+    height: 38px;
+
+    margin-top: -19px;
   }
 
   .anime-info-slider .ais-prev {
@@ -418,8 +346,25 @@
     right: 0;
   }
 
+  .anime-info-slider .ais-prev:before,
+  .anime-info-slider .ais-next:before {
+    font-size: 27px;
+    line-height: 38px;
+  }
+
+  /* ================================
+     DOTS
+     ================================ */
+
+  .anime-info-slider .ais-dots {
+    bottom: 9px;
+
+    gap: 5px;
+  }
+
   .anime-info-slider .ais-dot {
     width: 9px;
     height: 9px;
   }
+
 }
