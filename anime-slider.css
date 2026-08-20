@@ -335,64 +335,104 @@
    MOBILE
    ===================================================== */
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
 
   .anime-info-slider {
-    min-height: 475px;
+    min-height: 330px;
   }
 
   .anime-info-slider .ais-track,
   .anime-info-slider .ais-slide {
-    min-height: 475px;
+    min-height: 330px;
   }
 
   .anime-info-slider .ais-slide {
-    display: block;
-    padding: 20px 18px 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 14px 42px;
+    text-align: left;
   }
 
   .anime-info-slider .ais-poster {
-    width: 105px;
-    height: 150px;
-
-    margin: 0 auto 14px;
+    flex: 0 0 82px;
+    width: 82px;
+    height: 116px;
+    margin: 0;
   }
 
   .anime-info-slider .ais-info {
-    display: block;
-    text-align: center;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-self: stretch;
+    padding-top: 0;
+    justify-content: center;
+    text-align: left;
   }
 
   .anime-info-slider .ais-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.25;
+    margin-bottom: 6px;
   }
 
   .anime-info-slider .ais-date {
-    margin-bottom: 7px;
+    margin-bottom: 5px;
+    font-size: 9px;
   }
 
   .anime-info-slider .ais-genres {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
+    font-size: 9px;
+    line-height: 1.4;
   }
 
   .anime-info-slider .ais-summary-title {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    font-size: 9px;
   }
 
   .anime-info-slider .ais-summary {
     max-width: 100%;
+    margin-bottom: 6px;
+    font-size: 9px;
+    line-height: 1.45;
     -webkit-line-clamp: 4;
-    line-height: 1.5;
   }
 
   .anime-info-slider .ais-meta {
-    justify-content: center;
-    gap: 12px;
+    display: block;
+    font-size: 9px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .anime-info-slider .ais-meta span {
+    display: block;
+    margin: 0;
+  }
+
+  .anime-info-slider .ais-prev,
+  .anime-info-slider .ais-next {
+    width: 24px;
+    height: 38px;
+    margin-top: -19px;
+    opacity: .7;
+  }
+
+  .anime-info-slider .ais-prev:before,
+  .anime-info-slider .ais-next:before {
+    font-size: 25px;
+    line-height: 38px;
+  }
+
+  .anime-info-slider .ais-dots {
+    bottom: 9px;
   }
 
   .anime-info-slider .ais-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
   }
 }
