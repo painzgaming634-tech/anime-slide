@@ -349,15 +349,15 @@
   .anime-info-slider .ais-slide {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 14px 42px;
     text-align: left;
+    padding: 22px 28px 45px 22px;
+    gap: 12px;
   }
 
   .anime-info-slider .ais-poster {
     flex: 0 0 82px;
     width: 82px;
-    height: 116px;
+    height: 120px;
     margin: 0;
   }
 
@@ -365,10 +365,9 @@
     flex: 1;
     min-width: 0;
     display: flex;
-    align-self: stretch;
-    padding-top: 0;
-    justify-content: center;
     text-align: left;
+    justify-content: center;
+    align-self: stretch;
   }
 
   .anime-info-slider .ais-title {
@@ -378,57 +377,45 @@
   }
 
   .anime-info-slider .ais-date {
-    margin-bottom: 5px;
     font-size: 9px;
+    margin-bottom: 5px;
   }
 
   .anime-info-slider .ais-genres {
-    margin-bottom: 7px;
     font-size: 9px;
     line-height: 1.4;
+    margin-bottom: 7px;
   }
 
   .anime-info-slider .ais-summary-title {
-    margin-bottom: 4px;
     font-size: 9px;
+    margin-bottom: 4px;
   }
 
   .anime-info-slider .ais-summary {
-    max-width: 100%;
-    margin-bottom: 6px;
     font-size: 9px;
     line-height: 1.45;
+    margin-bottom: 6px;
     -webkit-line-clamp: 4;
   }
 
   .anime-info-slider .ais-meta {
-    display: block;
+    justify-content: flex-start;
+    gap: 10px;
     font-size: 9px;
-    line-height: 1.5;
-    text-align: left;
-  }
-
-  .anime-info-slider .ais-meta span {
-    display: block;
-    margin: 0;
   }
 
   .anime-info-slider .ais-prev,
   .anime-info-slider .ais-next {
-    width: 24px;
-    height: 38px;
-    margin-top: -19px;
     opacity: .7;
   }
 
-  .anime-info-slider .ais-prev:before,
-  .anime-info-slider .ais-next:before {
-    font-size: 25px;
-    line-height: 38px;
+  .anime-info-slider .ais-prev {
+    left: 0;
   }
 
-  .anime-info-slider .ais-dots {
-    bottom: 9px;
+  .anime-info-slider .ais-next {
+    right: 0;
   }
 
   .anime-info-slider .ais-dot {
